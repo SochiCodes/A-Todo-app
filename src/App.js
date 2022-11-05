@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import NewTodo from "./components/NewTodo/NewTodo";
+import Todo from "./components/Todos/Todo";
 
-function App() {
+const Dummy_Todo = [
+  {
+    id: "e1",
+    title: "Take a walk",
+    Date: new Date(2021, 7, 18),
+  },
+  {
+    id: "e2",
+    title: "Attend a conference",
+    Date: new Date(2022, 12, 18),
+  },
+  {
+    id: "e3",
+    title: "Grant an interview",
+    Date: new Date(2022, 11, 18),
+  },
+  {
+    id: "e4",
+    title: "Upgrade my system",
+    Date: new Date(2023, 4, 18),
+  },
+];
+
+const App = () => {
+  const [todos, setTodos] = useState(Dummy_Todo);
+
+  const addTodoHandler = (todo) => {
+    setTodos((prevTodos) => {
+      return [todo, ...prevTodos];
+    });
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NewTodo onAddTodo={addTodoHandler} />
+      <Todo items={todos} />
     </div>
   );
-}
+};
 
 export default App;
