@@ -5,7 +5,7 @@ const TodoItem = (props) => {
     <div className="todo-item">
       <TodoDate date={props.date}></TodoDate>
       <div>
-        <h2 className="todo-item__description">{title}</h2>z@
+        <h2 className="todo-item__description">{props.title}</h2>
       </div>
     </div>
   );
