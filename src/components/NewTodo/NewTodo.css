@@ -1,5 +1,5 @@
 .new-todo {
-  background-color: #a892ee;
+  background-color: rgb(240, 101, 210);
   padding: 1rem;
   margin: 2rem auto;
   width: 50rem;
@@ -13,8 +13,8 @@
   font: inherit;
   cursor: pointer;
   padding: 1rem 2rem;
-  border: 1px solid #40005d;
-  background-color: #40005d;
+  border: 1px solid rgba(20, 1, 21, 0.897);
+  background-color: rgba(26, 2, 28, 0.468);
   color: white;
   border-radius: 12px;
   margin-right: 1rem;
@@ -22,8 +22,8 @@
 
 .new-todo button:hover,
 .new-todo button:active {
-  background-color: #510674;
-  border-color: #510674;
+  background-color: rgba(44, 2, 47, 0.468);
+  border-color: rgba(44, 2, 47, 0.468);
 }
 
 .new-todo button.alternative {

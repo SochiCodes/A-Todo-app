@@ -30,7 +30,7 @@ const App = () => {
 
   const addTodoHandler = (todo) => {
     setTodos((prevTodos) => {
-      return [...prevTodos, todo];
+      return [todo, ...prevTodos];
     });
   };
   return (
@@ -42,3 +42,22 @@ const App = () => {
 };
 
 export default App;
+
+
+const promise_timeout = (action, msg, ttl) => {
+  return new Promise((res) => {
+    setTimeout(() => res(Promise[action](msg)), 1000 * ttl);
+  });
+};
+
+const timeout = () => {
+  Promise.allSettled([
+    promise_timeout("resolve", "success", 3),
+    promise_timeout("resolve", "success", 5),
+    promise_timeout("reject", "Error", 7),
+  ])
+    .then((res) => console.log(res))
+    .catch((err) => console.log(`An error occurred: [${err}]`));
+};
+
+timeout();

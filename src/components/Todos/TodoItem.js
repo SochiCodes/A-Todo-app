@@ -1,4 +1,5 @@
 import TodoDate from "./TodoDate";
+import "./TodoItem.css"
 
 const TodoItem = (props) => {
   return (

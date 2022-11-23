@@ -12,7 +12,7 @@ const NewTodo = (props) => {
   };
 
   return (
-    <div>
+    <div className="new-todo">
       <TodoForm onSaveTodoData={saveTodoDataHandler} />
     </div>
   );
